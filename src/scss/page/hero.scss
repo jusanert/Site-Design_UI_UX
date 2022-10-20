@@ -27,7 +27,9 @@
     height: 40px;
     background: url('../img/arrow-hero.svg') center center no-repeat;
     position: absolute;
+    top: 85%;
     left: 50%;
+    transform: translateX(-50%);
     bottom: 42px;
   }
 }
