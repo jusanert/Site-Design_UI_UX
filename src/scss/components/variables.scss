@@ -1,6 +1,6 @@
 //---Шрифт по умолчанию
-$fontFamily: "";
-$fontWeight: 400;
+$fontFamily: "WorkSans";
+$fontWeight: 600;
 
 //---РАЗМЕРЫ---===============================
 // Минимальная ширина страницы
@@ -8,9 +8,12 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1440;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$containerWidth: 1280;
+$containerWidth: 1215;
 // Отступ безопасности
 $containerPadding: 30;
 
 // Конечная ширина контейнера
-$maxWidthContainer: $containerWidth + $containerPadding; 
+$maxWidthContainer: $containerWidth + $containerPadding;
+
+//Ширина для появления бургера
+$burgerwidth: 576px

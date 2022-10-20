@@ -1,0 +1,138 @@
+.works {
+  padding: 60px 0 120px;
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+  }
+
+  // .works__container
+  &__container {}
+
+  // .works__title
+  &__title {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 150%;
+    margin-bottom: 95px;
+    @media (max-width: $burgerwidth) {
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+  }
+
+  // .works__body
+  &__body {}
+
+  // .works__card
+  &__card {
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+.card {
+  &:not(:last-child) {
+    margin-bottom: 95px;
+  }
+  @media (max-width: 576px) {
+    margin-bottom: 50px !important;
+  }
+  // .card__img
+  &__img {
+    border-radius: 16px;
+    flex: 0 0 50%;
+    margin-right: 32px;
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+  &_r{
+    flex-direction: row-reverse;
+    .card__img {
+      margin-right: 0;
+      margin-left: 32px;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+
+  // .card__info
+  &__info {
+    flex: 1 1 auto;
+    align-self: flex-end;
+  }
+
+  // .card__tag
+  &__tag {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    line-height: 150%;
+    @media (max-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+
+  // .card__text
+  &__text {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 150%;
+    margin-bottom: 24px;
+    @media (max-width: 475px) {
+      font-size: 25px;
+    }
+  }
+
+  // .card__category
+  &__category {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  // .card__link
+  &__link {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #E3E4E6;
+    padding: 8px 46px 8px 16px;
+    border: 1px solid rgba(227, 228, 230, 0.55);
+    border-radius: 100px;
+    position: relative;
+    transition: all .2s;
+
+    @media (any-hover) {
+      &:hover {
+        background: linear-gradient(99.05deg, #BC3CD8 0.07%, #C54B8C 106.32%);
+        padding: 8px 60px 8px 28px;
+        border: 1px solid #E3E4E6;
+
+        &:before {
+          content: '';
+          background: url('../img/arrow-hover.svg') center center no-repeat;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: url('../img/right.svg') center center no-repeat;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

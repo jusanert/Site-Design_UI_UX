@@ -19,7 +19,7 @@ import * as modules from './components/modules.js'
 /*===========================================*/
 //---Burger Menu
 
-// modules.menuInit();
+modules.menuInit();
 
 /*===========================================*/
 //---Modal window

@@ -29,7 +29,7 @@ browsersync.create();
 
 const scss = gulpSass(dartSass)
 
-let projectName = `${path.basename(path.resolve())}`;
+let projectName = `build`;
 const srcFolder = "src";
 const { src, dest, watch } = gulp;
 
@@ -91,7 +91,7 @@ function css() {
 		.pipe(
 			autoprefixer({
 				grid: true,
-				overrideBrowserslist: ["last 5 versions"],
+				overrideBrowserslist: ["last 10 versions"],
 				cascade: true
 			})
 		)
@@ -113,7 +113,7 @@ function cssWebp() {
 		.pipe(
 			autoprefixer({
 				grid: true,
-				overrideBrowserslist: ["last 5 versions"],
+				overrideBrowserslist: ["last 10 versions"],
 				cascade: true
 			})
 		)
@@ -206,8 +206,6 @@ function jsDev() {
 		.pipe(dest(app.build.js));
 }
 
-
-
 // Шрифты
 function fonts() {
 	return src(app.src.fonts)
@@ -261,7 +259,6 @@ function fontStyle() {
 }
 
 
-
 // Дополнительные функции
 function clean() {
 	return deleteAsync(app.clean);
@@ -312,12 +309,12 @@ function watchFiles() {
 
 let fontsBuild = gulp.series(fonts, fontStyle);
 let dev = gulp.series(clean, gulp.parallel(html, fonts, js, images, icons, assets), fontStyle, css, watchFiles);
-let build = gulp.series(cleanDir, gulp.parallel(html, jsDev, js, fonts, imagesBuild, icons, assets), css);
-let buildNoWebp = gulp.series(cleanDir, gulp.parallel(htmlWebp, jsDev, js, fonts, imagesWebp, icons, assets), cssWebp);
+let buildNoWebp = gulp.series(cleanDir, gulp.parallel(html, jsDev, js, fonts, imagesBuild, icons, assets), css);
+let build = gulp.series(cleanDir, gulp.parallel(htmlWebp, jsDev, js, fonts, imagesWebp, icons, assets), cssWebp);
 
 gulp.task('clean', cleanDir)
 gulp.task('fonts', fontsBuild);
 
 gulp.task('default', dev);
-gulp.task('build', build);
 gulp.task('buildNoWebp', buildNoWebp);
+gulp.task('build', build);

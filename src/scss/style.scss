@@ -18,8 +18,11 @@
 
 /*---CSS ПЕРЕМЕННЫЕ---*/
 :root {
-	--color-bg: #fff;
-	--color-text: #000;
+	--color-bg: linear-gradient(180deg, #010208 16.39%, #010206 20.51%, #040008 24.79%, #010101 30.46%, #010101 34.11%, #010101 36.21%, #010101 100%);
+  --color-title: #E3E4E6;
+	--color-text: rgba(227, 228, 230, 0.55);
+  // --width-burger: 576px;
+  --gap: 32px;
 }
 
 /*---ЦВЕТОВАЯ СХЕМА И СТРАНИЦА---*/
@@ -29,7 +32,7 @@ body {
 	font-family: $fontFamily, sans-serif;
 	font-weight: $fontWeight;
 	transition: background-color .2s, color .2s;
-	background-color: var(--color-bg);
+	background: var(--color-bg);
 	color: var(--color-text);
 
 	// Блокировка скролла
@@ -109,6 +112,11 @@ body {
 .main {
 	flex: 1 1 auto;
 }
+
+@import "page/hero.scss";
+@import "page/clients.scss";
+@import "page/works.scss";
+@import "page/about.scss";
 
 //===========================================//
 /*---Footer---*/
